@@ -1,4 +1,12 @@
 /*Had to write something in file for Github to accept the upload*/
 body{
     color: black;
+    background-color: rgb(245, 238, 238);
+
+}
+
+#pokemonListjs{
+display: flexbox;
+margin: 20px;
+padding: 20px;
 }
