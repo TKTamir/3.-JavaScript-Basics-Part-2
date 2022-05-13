@@ -6,7 +6,7 @@ body{
 }
 
 #pokemonListjs{
-display: flexbox;
+display: grid;
 margin: 20px;
 padding: 20px;
 }
