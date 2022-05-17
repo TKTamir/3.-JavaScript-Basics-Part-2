@@ -12,7 +12,7 @@ for (let i = 0; i < pokemonList.length; i++) {
     document.write('<br>' + pokemonList[i].name + ' ' + pokemonList[i].height + ' ');
 
     //Make sure to place [i] before .name/height/type, first choose the variable, then the value inside of it.
-    if (pokemonList[i].height >= '110') {
+    if (pokemonList[i].height >= 110) {
         document.write(' - Wow that is quite big ');
     }
     if (pokemonList[i].type.includes('Poison')) {
