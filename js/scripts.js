@@ -8,17 +8,26 @@ let pokemonList = [
 
 
 //Writes out the Pokemons by checking the length of the list until reaching the last item
-for (let i = 0; i < pokemonList.length; i++) {
-    document.write('<br>' + pokemonList[i].name + ' ' + pokemonList[i].height + ' ');
+
+
+    pokemonList.forEach(function (pokemon) {
+        if (pokemon.height >= 110) {
+            document.write('<p>' + pokemon.name + ' ' + pokemon.height + ' '  + ' - Wow that is quite big ' + '</p>');
+        }
+        if (pokemon.type.includes('Poison')) {
+            document.write( '-Beware of Poison! You might need an Antidote' + '<br>');
+        }
+        else if (pokemon.height < 110) {
+            document.write('<p>' + pokemon.name + ' ' + pokemon.height + ' ' + '</p>');
+
+        }
+    
 
     //Make sure to place [i] before .name/height/type, first choose the variable, then the value inside of it.
-    if (pokemonList[i].height >= 110) {
-        document.write(' - Wow that is quite big ');
-    }
-    if (pokemonList[i].type.includes('Poison')) {
-        document.write(' - Beware of Poison! You might need an Antidote');
-    }
 
 
-}
+
+
+});
+
 
