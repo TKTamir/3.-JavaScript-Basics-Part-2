@@ -5,8 +5,7 @@ body{
 
 }
 
-#pokemonListjs{
-display: grid;
-margin: 20px;
-padding: 20px;
+.button-class{
+    background-color: red;
+    border-radius: 80%;
 }
