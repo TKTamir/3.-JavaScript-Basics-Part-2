@@ -21,6 +21,7 @@ let pokemonRepository = (function () {
     };
 })();
 
+
 pokemonRepository.add({ name: 'Raichu', height: 30.25, type: 'Electric' });
 console.log(pokemonRepository.getAll());
 
