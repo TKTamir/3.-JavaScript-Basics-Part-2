@@ -58,10 +58,9 @@ let pokemonRepository = (function () {
 
 })();
 
-
+//Push item to PokemonList
 pokemonRepository.add({ name: "Raichu", height: 30.25, type: "Electric" });
 console.log(pokemonRepository.getAll());
-
 
 pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
