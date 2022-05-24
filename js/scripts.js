@@ -10,7 +10,7 @@ let pokemonRepository = (function () {
     { name: "Magnemite", height: 30.48, type: ["Electric", "Steel"] },
     { name: "Tentacool", height: 111.9, type: ["Water", "Poison"] },
     { name: "Seel", height: 109.22, type: ["Water"] }];
-
+    //Function to add pokemon and validate the typeof
     function add(pokemon) {
         if (
             typeof pokemon === "object" &&
@@ -23,9 +23,11 @@ let pokemonRepository = (function () {
             console.log("Invalid Pokemon entry")
         }
     }
+    //Fetches the pokemonList
     function getAll() {
         return pokemonList;
     }
+    // Add buttons that are assigned with data from Pokemon list
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list");
         let listPokemon = document.createElement("li");
@@ -34,11 +36,20 @@ let pokemonRepository = (function () {
         button.classList.add("button-class");
         listPokemon.appendChild(button);
         pokemonList.appendChild(listPokemon);
+        button.addEventListener('click', function () {
+            showDetails(pokemon);
+        });
+    }
+
+    //Shows the name of the currently clicked pokemon in Console
+    function showDetails(pokemon) {
+        console.log(pokemon);
     }
     return {
         add: add,
         getAll: getAll,
-        addListItem: addListItem
+        addListItem: addListItem,
+        showDetails: showDetails
 
     };
 
