@@ -36,11 +36,14 @@ let pokemonRepository = (function () {
         button.classList.add("button-class");
         listPokemon.appendChild(button);
         pokemonList.appendChild(listPokemon);
+        addEvent(button, pokemon);
+    }
+    //Function listens to 'click' event in addListItem, and sends 'pokemon' to showDetails function
+    function addEvent(button, pokemon) {
         button.addEventListener('click', function () {
-            showDetails(pokemon);
+            showDetails(pokemon)
         });
     }
-
     //Shows the name of the currently clicked pokemon in Console
     function showDetails(pokemon) {
         console.log(pokemon);
