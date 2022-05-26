@@ -5,11 +5,7 @@
 
 // Declaring variables inside IIFE, the add function and the getAll allow me to access it from outside the function
 let pokemonRepository = (function () {
-    let pokemonList = [{ name: "Ponyta", height: 99.06, type: ["Fire"] },
-    { name: "Slowpoke", height: 119.38, type: ["Water", "Psychic"] },
-    { name: "Magnemite", height: 30.48, type: ["Electric", "Steel"] },
-    { name: "Tentacool", height: 111.9, type: ["Water", "Poison"] },
-    { name: "Seel", height: 109.22, type: ["Water"] }];
+    let pokemonList = [];
     //Function to add pokemon and validate the typeof
     function add(pokemon) {
         if (
