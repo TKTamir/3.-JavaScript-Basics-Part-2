@@ -75,7 +75,9 @@ let pokemonRepository = (function () {
     }
     //Shows the name of the currently clicked pokemon in Console
     function showDetails(pokemon) {
-        console.log(pokemon);
+        loadDetails(pokemon).then(function () {
+            console.log(pokemon);
+        });
     }
     return {
         add: add,
@@ -89,8 +91,7 @@ let pokemonRepository = (function () {
 
 })();
 
-//Push item to PokemonList
-pokemonRepository.add({ name: "Raichu", height: 30.25, type: "Electric" });
+
 
 // Was commeted out in instruction video, check back to see if it should be kept in code
 //console.log(pokemonRepository.getAll());
