@@ -13,7 +13,7 @@ let pokemonRepository = (function () {
         if (
             typeof pokemon === "object" &&
             "name" in pokemon &&
-            //"detailsUrl" in pokemon
+            "detailsUrl" in pokemon
         ) {
             pokemonList.push(pokemon);
         } else {
@@ -53,6 +53,8 @@ let pokemonRepository = (function () {
         })
     }
 
+
+
     //Function listens to 'click' event in addListItem, and sends 'pokemon' to showDetails function
     function addEvent(button, pokemon) {
         button.addEventListener('click', function () {
@@ -76,7 +78,9 @@ let pokemonRepository = (function () {
 
 //Push item to PokemonList
 pokemonRepository.add({ name: "Raichu", height: 30.25, type: "Electric" });
-console.log(pokemonRepository.getAll());
+
+// Was commeted out in instruction video, check back to see if it should be kept in code
+//console.log(pokemonRepository.getAll());
 
 pokemonRepository.loadList().then(function () {
     pokemonRepository.getAll().forEach(function (pokemon) {
