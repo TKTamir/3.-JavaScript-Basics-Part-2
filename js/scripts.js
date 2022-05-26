@@ -90,8 +90,7 @@ let pokemonRepository = (function () {
 
 
 
-// Was commeted out in instruction video, check back to see if it should be kept in code
-//console.log(pokemonRepository.getAll());
+
 
 pokemonRepository.loadList().then(function () {
     pokemonRepository.getAll().forEach(function (pokemon) {
