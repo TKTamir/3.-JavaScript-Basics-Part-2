@@ -13,8 +13,7 @@ let pokemonRepository = (function () {
         if (
             typeof pokemon === "object" &&
             "name" in pokemon &&
-            "height" in pokemon &&
-            "type" in pokemon
+            //"detailsUrl" in pokemon
         ) {
             pokemonList.push(pokemon);
         } else {
