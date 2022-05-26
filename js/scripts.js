@@ -53,7 +53,19 @@ let pokemonRepository = (function () {
         })
     }
 
-
+    function loadDetails(item) {
+        let url = item.detailsUrl;
+        return fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (details) {
+            //Here details are added to the item
+            item.imageUrl = details.sprites.front_default;
+            item.height = details.height;
+            item.types = details.types;
+        }).catch(function (e) {
+            console.error(e);
+        });
+    }
 
     //Function listens to 'click' event in addListItem, and sends 'pokemon' to showDetails function
     function addEvent(button, pokemon) {
@@ -70,7 +82,8 @@ let pokemonRepository = (function () {
         getAll: getAll,
         addListItem: addListItem,
         showDetails: showDetails,
-        loadList: loadList
+        loadList: loadList,
+        loadDetails: loadDetails
 
     };
 
