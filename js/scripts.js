@@ -69,8 +69,7 @@ let pokemonRepository = (function () {
         });
     }
 
-    //Function listens to 'click' event in addListItem, and sends 'pokemon' to showDetails function
-    
+
     //Shows the name of the currently clicked pokemon in Console
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
