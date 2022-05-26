@@ -36,21 +36,22 @@ let pokemonRepository = (function () {
         addEvent(button, pokemon);
     }
 
+    // Function communicates with api throgh json and returns name and url
     function loadList() {
         return fetch(apiUrl).then(function (response) {
-          return response.json();
+            return response.json();
         }).then(function (json) {
-          json.results.forEach(function (item) {
-            let pokemon = {
-              name: item.name,
-              detailsUrl: item.url
-            };
-            add(pokemon);
-          });
+            json.results.forEach(function (item) {
+                let pokemon = {
+                    name: item.name,
+                    detailsUrl: item.url
+                };
+                add(pokemon);
+            });
         }).catch(function (e) {
-          console.error(e);
+            console.error(e);
         })
-      }
+    }
 
     //Function listens to 'click' event in addListItem, and sends 'pokemon' to showDetails function
     function addEvent(button, pokemon) {
@@ -66,7 +67,8 @@ let pokemonRepository = (function () {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
-        showDetails: showDetails
+        showDetails: showDetails,
+        loadList: loadList
 
     };
 
@@ -76,7 +78,8 @@ let pokemonRepository = (function () {
 pokemonRepository.add({ name: "Raichu", height: 30.25, type: "Electric" });
 console.log(pokemonRepository.getAll());
 
-pokemonRepository.getAll().forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function () {
+    pokemonRepository.getAll().forEach(function (pokemon) {
+        pokemonRepository.addListItem(pokemon);
+    });
 });
-
