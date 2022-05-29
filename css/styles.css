@@ -5,14 +5,15 @@
         justify-content: center;
 
     }
+
     h1 {
         font-size: 43px;
         line-height: 3px;
         padding-left: 20px;
         text-align: center;
-        
+
     }
-    
+
     button:hover,
     button:focus,
     .button:hover,
@@ -23,22 +24,40 @@
         opacity: 0.8;
     }
 
+    /*Styling for the Pokédex buttons*/
     .button-class {
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
         background-color: red;
-        border-radius: 80%;
-        padding: 15px;
-        margin: 5px;
+        text-transform: capitalize;
+        padding: 20px 100px;
+        margin: 1px;
+        border-radius: 3.5px;
+        text-align: center;
+        width: 100%;
+
+
+
+
+
+
     }
 
-    .pokemon-list{
-        display: inline-block;
+    /*Styling for the unordered list of pokemons*/
+    .pokemon-list {
+        display: block;
         list-style: none;
         align-self: center;
+        margin: 2px;
+        padding: 3px 9px 3px 3px;
+
+        width: 200px;
         max-width: 80vw;
-        margin: 25px;
-        border: 1px double rgba(0, 0, 0, 0.274);
-        border-width: 1rem;
-        
+        border: 1px double rgba(0, 0, 0, 0.651);
+        border-width: 6px;
+
+
     }
 
 
@@ -66,7 +85,7 @@
         background: rgba(15, 15, 15, 0.26);
         text-align: center;
         align-self: center;
-       
+
 
         /* to show it above other content */
         z-index: 999;
@@ -78,6 +97,7 @@
         display: grid;
         text-align: center;
     }
+
     /*Inner Modal styling*/
     .modal {
         margin: auto;
@@ -89,7 +109,7 @@
         max-width: 700px;
         text-align: center;
     }
-    
+
     /*Close button for modal*/
     .modal-close {
         float: right;
@@ -99,11 +119,12 @@
         color: #777;
         text-decoration: underline;
     }
+
     /*Hide modal*/
     #modal-container {
         display: none;
     }
-    
+
     /*Pokemon Sprite styling*/
     .pokemon-img {
         display: block;
@@ -117,31 +138,30 @@
         h1 {
             font-size: 30px;
         }
+
         h2 {
             font-size: 25px;
         }
 
-        .button-class {
-            padding: 10px;
-        }
+
     }
 
     @media all and (min-width: 501px) and (max-width: 750px) {
         h1 {
             font-size: 36px;
         }
+
         h2 {
             font-size: 30px;
         }
-        .button-class {
-            padding: 12px;
-        }
+
     }
 
     @media all and (max-width: 751px) {
         h1 {
             font-size: 42px;
         }
+
         h2 {
             font-size: 35px;
         }
