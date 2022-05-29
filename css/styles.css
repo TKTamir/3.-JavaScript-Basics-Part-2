@@ -5,7 +5,13 @@
         justify-content: center;
 
     }
-
+    h1 {
+        font-size: 43px;
+        line-height: 3px;
+        padding-left: 20px;
+        text-align: center;
+        
+    }
     
     button:hover,
     button:focus,
@@ -25,9 +31,14 @@
     }
 
     .pokemon-list{
-        /* align-items: center;
-        width: 100vw;
-        height: auto; */
+        display: inline-block;
+        list-style: none;
+        align-self: center;
+        max-width: 80vw;
+        margin: 25px;
+        border: 1px double rgba(0, 0, 0, 0.274);
+        border-width: 1rem;
+        
     }
 
 
@@ -40,9 +51,9 @@
 
     }
 
-    /*Modal Styling*/
+    /*Outer Modal Styling*/
     #modal-container.is-visible {
-        display: block;
+        display: flex;
         position: fixed;
         padding: 15px;
         margin: auto;
@@ -67,7 +78,7 @@
         display: grid;
         text-align: center;
     }
-
+    /*Inner Modal styling*/
     .modal {
         margin: auto;
         display: inline-block;
