@@ -132,7 +132,7 @@ let pokemonRepository = (function () {
 
     //Function to hide Modal via CSS Class
     function hideModal() {
-        modal.Container.classList.remove('is-visible');
+        modalContainer.classList.remove('is-visible');
     }
     //Event listner for ESC, will close modal by removing 'is-visible' class
     window.addEventListener('keydown', (e) => {
@@ -155,10 +155,8 @@ let pokemonRepository = (function () {
         addListItem: addListItem,
         showDetails: showDetails,
         loadList: loadList,
-        loadDetails: loadDetails,
+        loadDetails: loadDetails
         
-
-
     };
 
 })();
