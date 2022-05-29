@@ -44,3 +44,6 @@ button:hover, button:focus, .button:hover, .button:focus  {
 
     }
    
+    .is-visible{
+    display : none;
+    }
