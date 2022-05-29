@@ -7,6 +7,7 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let modalContainer = document.querySelector('#modal-container');
 
     //Function to add pokemon and validate the typeof
     function add(pokemon) {
@@ -112,6 +113,13 @@ let pokemonRepository = (function () {
         imgElement.src = pokemon.imageUrl;
         imgElement.classList.add('pokemon-img');
         imgElement.setAttribute('alt' + pokemon.name);
+
+        //Append elements to Modal div
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(heightElement);
+        modal.appendChild(typesElement);
+        modal.appendChild(imgElement);
 
     //Return Functions
     return {
