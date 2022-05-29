@@ -20,7 +20,7 @@ let pokemonRepository = (function () {
             console.log("Invalid Pokemon entry")
         }
     }
-    //Fetches the pokemonList
+    //getAll function returns the pokemonList
     function getAll() {
         return pokemonList;
     }
@@ -56,6 +56,9 @@ let pokemonRepository = (function () {
         })
     }
 
+    // Attempt load message function here-
+
+    //Promise function loads the img, height and types of the pokemon
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
@@ -77,6 +80,7 @@ let pokemonRepository = (function () {
             console.log(pokemon);
         });
     }
+    //Return Functions
     return {
         add: add,
         getAll: getAll,
@@ -92,7 +96,7 @@ let pokemonRepository = (function () {
 
 
 
-
+//Function loads the data from the api, forEach loop retrieves pokemon list one by one
 pokemonRepository.loadList().then(function () {
     pokemonRepository.getAll().forEach(function (pokemon) {
         pokemonRepository.addListItem(pokemon);
