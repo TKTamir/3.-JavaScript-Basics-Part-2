@@ -81,6 +81,38 @@ let pokemonRepository = (function () {
             console.log(pokemon);
         });
     }
+  //Showmodal function
+    function showModal(pokemon) {
+        //Reset modal content
+        modalContainer.innerHTML = '';
+        //create div and add 'modal' class to it
+        let modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        //Create and define button, h2, p, img elements
+        let closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText = 'Close';
+        closeButtonElement.addEventListener('click', hideModal);
+
+
+        let titleElement = document.createElement('h2');
+        titleElement.classList.add('pokemon-title');
+        titleElement.innerText('pokemon.name');
+
+        let heightElement = document.createElement('p');
+        heightElement.classList.add('pokemon-height');
+        heightElement.innerText= `Height: ${pokemon.height}`
+
+        let typesElement = document.createElement('p');
+        typesElement.classList.add('pokemon-height');
+        typesElement.innerText= `Height: ${pokemon.height}`
+
+        let imgElement = document.createElement('img');
+        imgElement.src = pokemon.imageUrl;
+        imgElement.classList.add('pokemon-img');
+        imgElement.setAttribute('alt' + pokemon.name);
+
     //Return Functions
     return {
         add: add,
