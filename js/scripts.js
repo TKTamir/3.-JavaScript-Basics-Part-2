@@ -39,7 +39,7 @@ let pokemonRepository = (function () {
         });
     }
 
-// Attempt load message function here-
+    // Attempt load message function here-
 
     // Function communicates with api throgh json and returns name and url
     function loadList() {
@@ -82,7 +82,7 @@ let pokemonRepository = (function () {
             console.log(pokemon);
         });
     }
-  //Showmodal function
+    //Showmodal function
     function showModal(pokemon) {
         //Reset modal content
         modalContainer.innerHTML = '';
@@ -103,11 +103,11 @@ let pokemonRepository = (function () {
 
         let heightElement = document.createElement('p');
         heightElement.classList.add('pokemon-height');
-        heightElement.innerText= `Height: ${pokemon.height}`;
+        heightElement.innerText = `Height: ${pokemon.height}`;
 
         let typesElement = document.createElement('p');
         typesElement.classList.add('pokemon-types');
-        typesElement.innerText= `Types: ${pokemon.types}`; //Check later if it will accept more than 1 type
+        typesElement.innerText = `Types: ${pokemon.types}`; //Check later if it will accept more than 1 type
 
         let imgElement = document.createElement('img');
         imgElement.src = pokemon.imageUrl;
@@ -120,7 +120,29 @@ let pokemonRepository = (function () {
         modal.appendChild(heightElement);
         modal.appendChild(typesElement);
         modal.appendChild(imgElement);
+        modalContainer.appendChild(modal);
 
+        modalContainer.classList.add('is-visible')
+    }
+
+    //Function to hide Modal via CSS Class
+    function hideModal() {
+        modal.Container.classList.remove('is-visible');
+    }
+    //Event listner for ESC, will close modal by removing 'is-visible' class
+    window.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+            hideModal();
+        }
+    });
+
+    //Close modal by click
+    modalContainer.addEventListener('click', (e) => {
+        let target = e.target;
+        if(target === modalContainer) {
+            hideModal();
+        }
+    });
     //Return Functions
     return {
         add: add,
