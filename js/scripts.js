@@ -79,7 +79,7 @@ let pokemonRepository = (function () {
     //Shows the name of the currently clicked pokemon in Console
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-            console.log(pokemon);
+            showModal(pokemon);
         });
     }
     //Showmodal function
@@ -99,7 +99,7 @@ let pokemonRepository = (function () {
 
         let titleElement = document.createElement('h2');
         titleElement.classList.add('pokemon-title');
-        titleElement.innerText('pokemon.name');
+        titleElement.innerText = pokemon.name.toUpperCase();
 
         let heightElement = document.createElement('p');
         heightElement.classList.add('pokemon-height');
@@ -107,12 +107,11 @@ let pokemonRepository = (function () {
 
         let typesElement = document.createElement('p');
         typesElement.classList.add('pokemon-types');
-        typesElement.innerText = `Types: ${pokemon.types}`; //Check later if it will accept more than 1 type
-
+        typesElement.innerText = `Types: ${pokemon.types.join(', ')}`;
         let imgElement = document.createElement('img');
         imgElement.src = pokemon.imageUrl;
         imgElement.classList.add('pokemon-img');
-        imgElement.setAttribute('alt' + pokemon.name);
+        imgElement.setAttribute('alt', ' ' + pokemon.name);
 
         //Append elements to Modal div
         modal.appendChild(closeButtonElement);
@@ -150,7 +149,9 @@ let pokemonRepository = (function () {
         addListItem: addListItem,
         showDetails: showDetails,
         loadList: loadList,
-        loadDetails: loadDetails
+        loadDetails: loadDetails,
+        
+
 
     };
 
