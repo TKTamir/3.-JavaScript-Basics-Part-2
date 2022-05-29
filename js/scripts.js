@@ -70,6 +70,11 @@ let pokemonRepository = (function () {
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
             item.types = details.types;
+            //Function shows the types instead of "[object]" through forEach loop that goes through each pokemon
+            let types = [];
+            details.types.forEach((pokemon) => types.push(pokemon.type.name));
+            item.types = types;
+            
         }).catch(function (e) {
             console.error(e);
         });
@@ -108,6 +113,7 @@ let pokemonRepository = (function () {
         let typesElement = document.createElement('p');
         typesElement.classList.add('pokemon-types');
         typesElement.innerText = `Types: ${pokemon.types.join(', ')}`;
+
         let imgElement = document.createElement('img');
         imgElement.src = pokemon.imageUrl;
         imgElement.classList.add('pokemon-img');
