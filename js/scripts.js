@@ -38,6 +38,8 @@ let pokemonRepository = (function () {
         });
     }
 
+// Attempt load message function here-
+
     // Function communicates with api throgh json and returns name and url
     function loadList() {
         return fetch(apiUrl).then(function (response) {
@@ -56,7 +58,6 @@ let pokemonRepository = (function () {
         })
     }
 
-    // Attempt load message function here-
 
     //Promise function loads the img, height and types of the pokemon
     function loadDetails(item) {
