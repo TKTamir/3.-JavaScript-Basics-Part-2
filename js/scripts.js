@@ -102,11 +102,11 @@ let pokemonRepository = (function () {
 
         let heightElement = document.createElement('p');
         heightElement.classList.add('pokemon-height');
-        heightElement.innerText= `Height: ${pokemon.height}`
+        heightElement.innerText= `Height: ${pokemon.height}`;
 
         let typesElement = document.createElement('p');
-        typesElement.classList.add('pokemon-height');
-        typesElement.innerText= `Height: ${pokemon.height}`
+        typesElement.classList.add('pokemon-types');
+        typesElement.innerText= `Types: ${pokemon.types}`; //Check later if it will accept more than 1 type
 
         let imgElement = document.createElement('img');
         imgElement.src = pokemon.imageUrl;
