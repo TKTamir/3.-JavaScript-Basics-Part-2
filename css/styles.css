@@ -1,116 +1,124 @@
-    body{
+    body {
         color: black;
         background-color: rgb(245, 238, 238);
-        display:flex;
+        display: flex;
         justify-content: center;
-        
+
     }
-    button:hover, button:focus, .button:hover, .button:focus  {
+
+    button:hover,
+    button:focus,
+    .button:hover,
+    .button:focus {
         /* Hand Cursor */
-        cursor:pointer;
+        cursor: pointer;
         /* Reduce Opacity*/
-        opacity:0.8;
+        opacity: 0.8;
     }
-    .button-class{
+
+    .button-class {
         background-color: red;
         border-radius: 80%;
         padding: 15px;
         margin: 5px;
     }
 
-    
-   
 
-     
-    
-        .modal {
-            margin: auto;
-            display: inline-block;
-            box-sizing: border-box;
-            background: #fff;
-            padding: 15px;
-            width: 100%;
-            max-width: 700px;
-            text-align: center;
-        }
 
-        .modal-close {
-            float: right;
-            -webkit-appearance: none;
-            border: 0;
-            background: none;
-            color: #777;
-            text-decoration: underline;
-        }
 
-    
-        .modal h1 {
-            margin-top: 0;
-        }
 
-        .modal p {
-            margin-bottom: 0;
 
-        }
+    .modal {
+        margin: auto;
+        display: inline-block;
+        box-sizing: border-box;
+        background: #fff;
+        padding: 15px;
+        width: 100%;
+        max-width: 700px;
+        text-align: center;
+    }
 
-        
-        #modal-container.is-visible {
+    .modal-close {
+        float: right;
+        -webkit-appearance: none;
+        border: 0;
+        background: none;
+        color: #777;
+        text-decoration: underline;
+    }
+
+
+    .modal h1 {
+        margin-top: 0;
+    }
+
+    .modal p {
+        margin-bottom: 0;
+
+    }
+
+
+    #modal-container.is-visible {
         position: fixed;
         padding: 15px;
         margin: auto;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        top:0;
-        left:0;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         max-width: 700px;
         background: #fff;
         text-align: center;
 
-                /* to show it above other content */
-        z-index: 999; 
-        
+        /* to show it above other content */
+        z-index: 999;
+
         /* to allow scrolling if the screen is not high enough*/
-        overflow: auto; 
-        
+        overflow: auto;
+
         /* this is used to center the modal */
         display: grid;
         text-align: center;
 
-        }
-        #modal-container {
-            display : none;
-            }
+    }
 
-        .pokemon-img {
+    #modal-container {
+        display: none;
+    }
+
+    .pokemon-img {
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 50%;
+    }
+
+    /*Responsive view*/
+    @media all and (max-width: 500px) {
+        h1 {
+            font-size: 30px;
         }
 
-        /*Responsive view*/
-        @media all and (max-width: 500px){
-            h1{
-                font-size: 30px;
-            }
-            .button-class{
-                padding: 10px;
-            }
+        .button-class {
+            padding: 10px;
         }
-    
-        @media all and (min-width: 501px) and (max-width: 750px){
-            h1{
-                font-size: 36px;
-            }
-            .button-class{
-                padding: 12px;
-            }
+    }
+
+    @media all and (min-width: 501px) and (max-width: 750px) {
+        h1 {
+            font-size: 36px;
         }
-        
-        @media all and (max-width: 751px) {
-            h1{
-                font-size: 42px;
-            }
+
+        .button-class {
+            padding: 12px;
         }
+    }
+
+    @media all and (max-width: 751px) {
+        h1 {
+            font-size: 42px;
+        }
+    }
