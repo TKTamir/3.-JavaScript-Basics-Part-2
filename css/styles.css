@@ -72,7 +72,6 @@
 
     /*Outer Modal Styling*/
     #modal-container.is-visible {
-        display: flex;
         position: fixed;
         padding: 15px;
         margin: auto;
