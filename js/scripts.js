@@ -11,7 +11,7 @@ let pokemonRepository = (function () {
 
     //Function to add pokemon and validate the typeof
     function add(pokemon) {
-        if ( pokemon.name && pokemon.detailsUrl) 
+        if ( pokemon.name && pokemon.detailsUrl);
          {
             pokemonList.push(pokemon);
         } else {
@@ -111,29 +111,11 @@ let pokemonRepository = (function () {
         //Create and define button, h2, p, img elements
 
         let pokemonName = $(`<h1>${pokmeon.name}</h1>`);
+        let pokemonImage = $(`<img class="modal-img mx-auto" src="${pokemon.imageUrl}" alt="Sprite of Pokemon">`);
+        let pokemonHeight = $(`<p class="mt-2 ml-4 mb-1">Height: ${pokemon.height}`);
+        let pokemonTypes = $(`<p class="mt-2 ml-4 mb-1">Types: ${pokmeon.types.join(', ')}</p>`);
 
-        let closeButtonElement = document.createElement('button');
-        closeButtonElement.classList.add('modal-close');
-        closeButtonElement.innerText = 'Close';
-        closeButtonElement.addEventListener('click', hideModal);
-
-
-        let titleElement = document.createElement('h2');
-        titleElement.classList.add('pokemon-title');
-        titleElement.innerText = pokemon.name.toUpperCase();
-
-        let heightElement = document.createElement('p');
-        heightElement.classList.add('pokemon-height');
-        heightElement.innerText = `Height: ${pokemon.height}`;
-
-        let typesElement = document.createElement('p');
-        typesElement.classList.add('pokemon-types');
-        typesElement.innerText = `Types: ${pokemon.types.join(', ')}`;
-
-        let imgElement = document.createElement('img');
-        imgElement.src = pokemon.imageUrl;
-        imgElement.classList.add('pokemon-img');
-        imgElement.setAttribute('alt', ' ' + pokemon.name);
+      
 
         //Append elements to Modal div
         modal.appendChild(closeButtonElement);
