@@ -7,6 +7,8 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let input = $('input');
+    input.on('input', filterList);
 
     //Function to add pokemon and validate the typeof
     function add(pokemon) {
@@ -22,9 +24,9 @@ let pokemonRepository = (function () {
     }
     // Add buttons that are assigned with data from Pokemon list
     function addListItem(pokemon) {
-        let pokemonList = document.querySelector(".pokemon-list");
-        let pokeListItem = document.createElement("li");
-        let button = document.createElement("button");
+        let pokemonList = document.querySelector('.pokemon-list');
+        let pokeListItem = document.createElement('li');
+        let button = document.createElement('button');
         button.innerText = pokemon.name;
         button.addEventListener("click", function (event) {
             showDetails(pokemon);
@@ -38,7 +40,7 @@ let pokemonRepository = (function () {
         button.classList.add('bg-primary', 'text-capitalize');
         button.setAttribute('data-toggle', 'modal');
         button.setAttribute('data-target', '.modal');
-        pokeListItem.classList.add("group-list-item");
+        pokeListItem.classList.add('group-list-item');
         pokeListItem.classList.add('col-sm-9');
 
 
@@ -66,7 +68,20 @@ let pokemonRepository = (function () {
             console.error(e);
         })
     }
-
+    //Search function to filter out list items
+    function filterList() {
+        let inputValue = $('input').val();
+        let list = $('li');
+        list.each(function () {
+          let item = $(this);
+          let name = item.text();
+          if (name.startsWith(inputValue)) {
+            item.show();
+          } else {
+            item.hide();
+          }
+        });
+      }
 
     //Promise function loads the img, height and types of the pokemon
     function loadDetails(item) {
@@ -138,7 +153,8 @@ let pokemonRepository = (function () {
         showDetails: showDetails,
         loadList: loadList,
         loadDetails: loadDetails,
-        showModal: showModal
+        showModal: showModal,
+        filterList: filterList
 
     };
 
