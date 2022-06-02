@@ -1,57 +1,29 @@
     body {
         color: black;
-        background-color: rgb(210, 169, 169);
+        background-color: rgb(245, 238, 238);
         display: flex;
         justify-content: center;
 
     }
 
     h1 {
-    
+      
         padding-top: 80px;
 
     }
 
-    button:hover,
-    button:focus,
-    .button:hover,
-    .button:focus {
-        /* Hand Cursor */
-        cursor: pointer;
-        /* Reduce Opacity*/
-        opacity: 0.8;
-    }
+ 
 
     /*Styling for the Pokédex buttons*/
     .button-class {
-        display: flex;
-        justify-content: center;
-        font-size: 25px;
-        background-color: rgba(216, 17, 17, 0.884);
-        text-transform: capitalize;
-        /* padding: 20px 100px; Pre Bootstrap */
-        margin: 1px;
-        border-radius: 3.5px;
-        text-align: center;
-        width: 100%;
-
-
-
-
-
+        
 
     }
 
     /*Styling for the unordered list of pokemons*/
     .pokemon-list {
-        display: block;
         list-style: none;
         align-self: center;
-        margin: 2px;
-        padding: 3px 9px 3px 3px;
-
-        width: 200px;
-        max-width: 80vw;
         border: 1px double rgba(0, 0, 0, 0.651);
         border-width: 6px;
 
@@ -68,59 +40,7 @@
 
     }
 
-    /*Outer Modal Styling*/
-    #modal-container.is-visible {
-        position: fixed;
-        padding: 15px;
-        margin: auto;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(15, 15, 15, 0.26);
-        text-align: center;
-        align-self: center;
-
-
-        /* to show it above other content */
-        z-index: 999;
-
-        /* to allow scrolling if the screen is not high enough*/
-        overflow: auto;
-
-        /* this is used to center the modal */
-        display: grid;
-        text-align: center;
-    }
-
-    /*Inner Modal styling*/
-    .modal {
-        margin: auto;
-        display: inline-block;
-        box-sizing: border-box;
-        background: #fff;
-        padding: 15px;
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
-    }
-
-    /*Close button for modal*/
-    .modal-close {
-        float: right;
-        -webkit-appearance: none;
-        border: 0;
-        background: none;
-        color: #777;
-        text-decoration: underline;
-    }
-
-    /*Hide modal*/
-    #modal-container {
-        display: none;
-    }
+    
 
     /*Pokemon Sprite styling*/
     .pokemon-img {
@@ -130,40 +50,4 @@
         width: 50%;
     }
 
-    /*Responsive view*/
-    @media all and (max-width: 500px) {
-        h1 {
-            font-size: 30px;
-        }
-
-        h2 {
-            font-size: 25px;
-        }
-        .modal {
-            max-width: 200px;
-        }
-
-    }
-
-    @media all and (min-width: 501px) and (max-width: 750px) {
-        h1 {
-            font-size: 36px;
-        }
-
-        h2 {
-            font-size: 30px;
-        }
-        .modal {
-            max-width: 250px;
-        }
-    }
-
-    @media all and (max-width: 751px) {
-        h1 {
-            font-size: 42px;
-        }
-
-        h2 {
-            font-size: 35px;
-        }
-    }
+    
