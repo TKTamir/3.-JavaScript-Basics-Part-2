@@ -10,7 +10,7 @@ let pokemonRepository = (function () {
 
     //Function to add pokemon and validate the typeof
     function add(pokemon) {
-        if ( pokemon.name && pokemon.detailsUrl) {
+        if (pokemon.name && pokemon.detailsUrl) {
             pokemonList.push(pokemon);
         } else {
             console.log('Invalid Pokemon entry');
@@ -35,7 +35,7 @@ let pokemonRepository = (function () {
         //Add Classes and attributes to pokeListItem
         button.classList.add('button-class', 'btn', 'btn-primary');
         button.classList.add('btn-block', 'btn-outline-primary', 'm-1');
-        button.classList.add('bg-primary', 'text-capitalize' );
+        button.classList.add('bg-primary', 'text-capitalize');
         button.setAttribute('data-toggle', 'modal');
         button.setAttribute('data-target', '.modal');
         pokeListItem.classList.add("group-list-item");
@@ -96,19 +96,19 @@ let pokemonRepository = (function () {
             showModal(pokemon);
         });
     }
-    
+
     //Showmodal function
     function showModal(pokemon) {
         // Select Elements
         let modalTitle = $('.modal-title');
         let modalBody = $('.modal-body');
-        
+
 
         //Reset modal content
         modalTitle.empty();
         modalBody.empty();
-       
-              
+
+
 
         //Create and define h1, p, img elements
 
@@ -119,7 +119,7 @@ let pokemonRepository = (function () {
         let pokemonSvg = $(`<img class="modal-img mx-auto" src="${pokemon.svgUrl}" alt="SVG illustration of Pokemon">`);
 
 
-      
+
 
         //Append elements to Modal div
         modalTitle.append(pokemonName);
@@ -129,7 +129,7 @@ let pokemonRepository = (function () {
         modalBody.append(pokemonSvg);
     }
 
-    
+
     //Return Functions
     return {
         add: add,

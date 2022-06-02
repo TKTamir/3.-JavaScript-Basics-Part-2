@@ -7,19 +7,19 @@
     }
 
     h1 {
-      
+
         padding-top: 80px;
 
     }
 
- 
+
 
     /*Styling for the Pokédex buttons*/
     .button-class {
         display: flex;
         justify-content: center;
         color: rgba(0, 0, 0, 0.753);
-    } 
+    }
 
     /*Styling for the unordered list of pokemons*/
     .pokemon-list {
@@ -42,9 +42,9 @@
     }
 
     /* Pokemon Sprite styling */
-    .modal-sprite{
+    .modal-sprite {
         display: block;
-        
+
     }
 
     /*Pokemon SVG Image styling*/
@@ -59,8 +59,8 @@
 
     @media (min-width: 500px) {
         .button-class {
-            
+
             width: 450px;
         }
-        
+
     }
