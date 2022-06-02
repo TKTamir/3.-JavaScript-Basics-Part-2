@@ -75,7 +75,7 @@ let pokemonRepository = (function () {
         list.each(function () {
           let item = $(this);
           let name = item.text();
-          if (name.startsWith(inputValue)) {
+          if (name.startsWith(inputValue.toLowerCase)) {
             item.show();
           } else {
             item.hide();
