@@ -1,16 +1,14 @@
     body {
         color: black;
-        background-color: rgb(245, 238, 238);
+        background-color: rgb(210, 169, 169);
         display: flex;
         justify-content: center;
 
     }
 
     h1 {
-        /* font-size: 43px;
-        line-height: 3px;
-        padding-left: 20px;
-        text-align: center; Pre Bootstrap */
+    
+        padding-top: 80px;
 
     }
 
