@@ -1,5 +1,6 @@
 ## Pokedex WebApp
-This is my site.. (Placeholder)
+This is my site.. 
+https://tktamir.github.io/Pokedex---Tamir-Kahalany/
 
 
 ## Tech Tools
