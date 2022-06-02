@@ -24,9 +24,9 @@ let pokemonRepository = (function () {
     }
     // Add buttons that are assigned with data from Pokemon list
     function addListItem(pokemon) {
-        let pokemonList = document.querySelector(".pokemon-list");
-        let pokeListItem = document.createElement("li");
-        let button = document.createElement("button");
+        let pokemonList = document.querySelector('.pokemon-list');
+        let pokeListItem = document.createElement('li');
+        let button = document.createElement('button');
         button.innerText = pokemon.name;
         button.addEventListener("click", function (event) {
             showDetails(pokemon);
