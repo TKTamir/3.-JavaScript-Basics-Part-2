@@ -16,7 +16,6 @@
 
     /*Styling for the Pokédex buttons*/
     .button-class {
-        
 
     }
 
@@ -40,9 +39,13 @@
 
     }
 
-    
+    /* Pokemon Sprite styling */
+    .modal-sprite{
+        display: block;
+        
+    }
 
-    /*Pokemon Sprite styling*/
+    /*Pokemon SVG Image styling*/
     .modal-img {
         display: block;
         margin-left: auto;
