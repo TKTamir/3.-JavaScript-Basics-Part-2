@@ -7,7 +7,7 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-    let modalContainer = document.querySelector('#modal-container');
+    let modal = $('modal');
 
     //Function to add pokemon and validate the typeof
     function add(pokemon) {
@@ -97,22 +97,24 @@ let pokemonRepository = (function () {
             showModal(pokemon);
         });
     }
+    
     //Showmodal function
     function showModal(pokemon) {
         // Select Elements
-        let modalbody = $('.modal-body');
+        let modalBody = $('.modal-body');
         let modalTitle = $('.modal-title');
 
         //Reset modal content
+        modalBody.empty();
         modalTitle.empty();
-        modalbody.empty();
+        
 
-        //Create and define button,h1 , p, img elements
+        //Create and define h1, p, img elements
 
-        let pokemonName = $(`<h1>${pokmeon.name}</h1>`);
+        let pokemonName = $(`<h1>${pokemon.name}</h1>`);
         let pokemonImage = $(`<img class="modal-img mx-auto" src="${pokemon.imageUrl}" alt="Sprite of Pokemon">`);
-        let pokemonHeight = $(`<p class="mt-2 ml-4 mb-1">Height: ${pokemon.height}`);
-        let pokemonTypes = $(`<p class="mt-2 ml-4 mb-1">Types: ${pokmeon.types.join(', ')}</p>`);
+        let pokemonHeight = $(`<p class="mt-2 ml-4 mb-1">Height: ${pokemon.height}</p>`);
+        let pokemonTypes = $(`<p class="mt-2 ml-4 mb-1">Types: ${pokemon.types.join(', ')}</p>`);
 
       
 
