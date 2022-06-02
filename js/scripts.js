@@ -7,7 +7,6 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-    let modal = $('modal');
 
     //Function to add pokemon and validate the typeof
     function add(pokemon) {
@@ -76,7 +75,8 @@ let pokemonRepository = (function () {
             return response.json();
         }).then(function (details) {
             //Here details are added to the item
-            item.imageUrl = details.sprites.front_default;
+            item.spriteUrl = details.sprites.front_default;
+            item.svgUrl = details.sprites.other.dream_world.front_default;
             item.height = details.height;
             item.types = details.types;
             //Function shows the types instead of "[object]" through forEach loop that goes through each pokemon
@@ -100,8 +100,10 @@ let pokemonRepository = (function () {
     //Showmodal function
     function showModal(pokemon) {
         // Select Elements
-        let modalBody = $('.modal-body');
+        let modalHeader = $('.modal-header')
         let modalTitle = $('.modal-title');
+        let modalBody = $('.modal-body');
+        
 
         //Reset modal content
         modalBody.empty();
@@ -111,17 +113,20 @@ let pokemonRepository = (function () {
         //Create and define h1, p, img elements
 
         let pokemonName = $(`<h1>${pokemon.name}</h1>`);
-        let pokemonImage = $(`<img class="modal-img mx-auto" src="${pokemon.imageUrl}" alt="Sprite of Pokemon">`);
+        let pokemonSprite = $(`<img class="modal-sprite mx-auto" src="${pokemon.spriteUrl}" alt="Sprite of Pokemon">`);
         let pokemonHeight = $(`<p class="mt-2 ml-4 mb-1">Height: ${pokemon.height}</p>`);
         let pokemonTypes = $(`<p class="mt-2 ml-4 mb-1">Types: ${pokemon.types.join(', ')}</p>`);
+        let pokemonSvg = $(`<img class="modal-img mx-auto" src="${pokemon.svgUrl}" alt="SVG illustration of Pokemon">`);
+
 
       
 
         //Append elements to Modal div
         modalTitle.append(pokemonName);
+        modalHeader.append(pokemonSprite);
         modalBody.append(pokemonHeight);
         modalBody.append(pokemonTypes);
-        modalBody.append(pokemonImage);
+        modalBody.append(pokemonSvg);
     }
 
     
