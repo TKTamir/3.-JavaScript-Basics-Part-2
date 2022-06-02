@@ -27,7 +27,6 @@ let pokemonRepository = (function () {
         let pokeListItem = document.createElement("li");
         let button = document.createElement("button");
         button.innerText = pokemon.name;
-        pokemonList.appendChild(pokeListItem);
         button.addEventListener("click", function (event) {
             showDetails(pokemon);
             event.target.blur;
@@ -47,7 +46,7 @@ let pokemonRepository = (function () {
 
         //Add pokeListItem
         pokeListItem.appendChild(button);
-        pokemonList.appendChild(listItem);
+        pokemonList.appendChild(pokeListItem);
     }
 
 
@@ -119,10 +118,10 @@ let pokemonRepository = (function () {
       
 
         //Append elements to Modal div
-        modal.appendChild(pokemonName);
-        modal.appendChild(pokemonHeight);
-        modal.appendChild(pokemonTypes);
-        modal.appendChild(pokemonImage);
+        modalTitle.append(pokemonName);
+        modalBody.append(pokemonHeight);
+        modalBody.append(pokemonTypes);
+        modalBody.append(pokemonImage);
     }
 
     
@@ -133,7 +132,8 @@ let pokemonRepository = (function () {
         addListItem: addListItem,
         showDetails: showDetails,
         loadList: loadList,
-        loadDetails: loadDetails
+        loadDetails: loadDetails,
+        showModal: showModal
 
     };
 
