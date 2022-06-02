@@ -57,7 +57,12 @@
         width: 50%;
         max-width: 70vw;
     }
-
+    
+    /* Search bar styling */
+    .form-inline{
+        display: block;
+        margin-left: 20px;
+    }
 
     @media (min-width: 500px) {
         .button-class {
