@@ -11,11 +11,8 @@ let pokemonRepository = (function () {
 
     //Function to add pokemon and validate the typeof
     function add(pokemon) {
-        if (
-            typeof pokemon === "object" &&
-            "name" in pokemon &&
-            "detailsUrl" in pokemon
-        ) {
+        if ( pokemon.name && pokemon.detailsUrl) 
+         {
             pokemonList.push(pokemon);
         } else {
             console.log("Invalid Pokemon entry")
@@ -28,19 +25,32 @@ let pokemonRepository = (function () {
     // Add buttons that are assigned with data from Pokemon list
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list");
-        let listPokemon = document.createElement("li");
+        let pokeListItem = document.createElement("li");
         let button = document.createElement("button");
         button.innerText = pokemon.name;
-        button.classList.add("button-class", "btn", "btn", "btn-primary");
-        listPokemon.classList.add("group-list-item");
-        listPokemon.appendChild(button);
-        pokemonList.appendChild(listPokemon);
+        pokemonList.appendChild(pokeListItem);
         button.addEventListener("click", function (event) {
-            showDetails(pokemon)
+            showDetails(pokemon);
+            event.target.blur;
         });
+
+
+        //Add Classes and attributes to pokeListItem
+        button.classList.add("button-class", "btn", "btn-primary");
+        button.classList.add('btn-block', 'btn-outline-primary', 'm-1');
+        button.classList.add('bg-primary', 'text-capitalize');
+        button.setAttribute('data-toggle', 'modal');
+        button.setAttribute('data-target', '.modal');
+        pokeListItem.classList.add("group-list-item");
+        pokeListItem.classList.add('col-sm-8');
+
+
+
+        //Add pokeListItem
+        pokeListItem.appendChild(button);
+        pokemonList.appendChild(listItem);
     }
 
-    // Attempt load message function here-
 
     // Function communicates with api throgh json and returns name and url
     function loadList() {
@@ -75,7 +85,7 @@ let pokemonRepository = (function () {
             let types = [];
             details.types.forEach((pokemon) => types.push(pokemon.type.name));
             item.types = types;
-            
+
         }).catch(function (e) {
             console.error(e);
         });
@@ -90,13 +100,18 @@ let pokemonRepository = (function () {
     }
     //Showmodal function
     function showModal(pokemon) {
+        // Select Elements
+        let modalbody = $('.modal-body');
+        let modalTitle = $('.modal-title');
+
         //Reset modal content
-        modalContainer.innerHTML = '';
-        //create div and add 'modal' class to it
-        let modal = document.createElement('div');
-        modal.classList.add('modal');
+        modalTitle.empty();
+        modalbody.empty();
 
         //Create and define button, h2, p, img elements
+
+        let pokemonName = $(`<h1>${pokmeon.name}</h1>`);
+
         let closeButtonElement = document.createElement('button');
         closeButtonElement.classList.add('modal-close');
         closeButtonElement.innerText = 'Close';
@@ -137,7 +152,7 @@ let pokemonRepository = (function () {
     }
     //Event listner for ESC, will close modal by removing 'is-visible' class
     window.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
             hideModal();
         }
     });
@@ -145,7 +160,7 @@ let pokemonRepository = (function () {
     //Close modal by click
     modalContainer.addEventListener('click', (e) => {
         let target = e.target;
-        if(target === modalContainer) {
+        if (target === modalContainer) {
             hideModal();
         }
     });
@@ -157,7 +172,7 @@ let pokemonRepository = (function () {
         showDetails: showDetails,
         loadList: loadList,
         loadDetails: loadDetails
-        
+
     };
 
 })();
