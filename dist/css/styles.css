@@ -19,6 +19,8 @@
         display: flex;
         justify-content: center;
         color: rgba(0, 0, 0, 0.753);
+        font-weight: 600;
+        font-size: large;
     }
 
     /*Styling for the unordered list of pokemons*/
