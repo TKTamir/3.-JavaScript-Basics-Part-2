@@ -16,17 +16,21 @@
 
     /*Styling for the Pokédex buttons*/
     .button-class {
-
+        display: flex;
+        justify-content: center;
+        color: rgba(0, 0, 0, 0.753);
+        font-size: 25px;
+        width: 450px;
     }
 
     /*Styling for the unordered list of pokemons*/
     .pokemon-list {
+        width: 500px;
+        max-width: 80vw;
         list-style: none;
         align-self: center;
         border: 1px double rgba(0, 0, 0, 0.651);
         border-width: 6px;
-
-
     }
 
 
