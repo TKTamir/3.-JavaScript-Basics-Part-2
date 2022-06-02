@@ -100,20 +100,20 @@ let pokemonRepository = (function () {
     //Showmodal function
     function showModal(pokemon) {
         // Select Elements
-        let modalHeader = $('.modal-header')
         let modalTitle = $('.modal-title');
         let modalBody = $('.modal-body');
         
 
         //Reset modal content
-        modalBody.empty();
         modalTitle.empty();
-        
+        modalBody.empty();
+       
+              
 
         //Create and define h1, p, img elements
 
         let pokemonName = $(`<h1>${pokemon.name}</h1>`);
-        let pokemonSprite = $(`<img class="modal-sprite mx-auto" src="${pokemon.spriteUrl}" alt="Sprite of Pokemon">`);
+        let pokemonSprite = $(`<img class="modal-sprite" src="${pokemon.spriteUrl}" alt="Sprite of Pokemon">`);
         let pokemonHeight = $(`<p class="mt-2 ml-4 mb-1">Height: ${pokemon.height}</p>`);
         let pokemonTypes = $(`<p class="mt-2 ml-4 mb-1">Types: ${pokemon.types.join(', ')}</p>`);
         let pokemonSvg = $(`<img class="modal-img mx-auto" src="${pokemon.svgUrl}" alt="SVG illustration of Pokemon">`);
@@ -123,7 +123,7 @@ let pokemonRepository = (function () {
 
         //Append elements to Modal div
         modalTitle.append(pokemonName);
-        modalHeader.append(pokemonSprite);
+        modalTitle.append(pokemonSprite);
         modalBody.append(pokemonHeight);
         modalBody.append(pokemonTypes);
         modalBody.append(pokemonSvg);
