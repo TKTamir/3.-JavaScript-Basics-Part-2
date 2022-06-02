@@ -35,11 +35,11 @@ let pokemonRepository = (function () {
         //Add Classes and attributes to pokeListItem
         button.classList.add('button-class', 'btn', 'btn-primary');
         button.classList.add('btn-block', 'btn-outline-primary', 'm-1');
-        button.classList.add('bg-primary', 'text-capitalize');
+        button.classList.add('bg-primary', 'text-capitalize' );
         button.setAttribute('data-toggle', 'modal');
         button.setAttribute('data-target', '.modal');
         pokeListItem.classList.add("group-list-item");
-        pokeListItem.classList.add('col-sm-8');
+        pokeListItem.classList.add('col-sm-9');
 
 
 
