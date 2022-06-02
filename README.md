@@ -12,6 +12,6 @@ https://tktamir.github.io/Pokedex---Tamir-Kahalany/
 -Github Actions
 
 ## Screenshot
-![image](https://user-images.githubusercontent.com/104828119/171670742-e9d74fcc-c309-4c88-a5c4-d6cb614ccdcc.png)
+![image](https://user-images.githubusercontent.com/104828119/171671436-58d97be7-a42a-4e1e-8065-7a98fb821e5c.png)
 
 (c) 2022 Tamir Nissim Kahalany
