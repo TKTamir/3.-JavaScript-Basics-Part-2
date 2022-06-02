@@ -33,7 +33,7 @@ let pokemonRepository = (function () {
 
 
         //Add Classes and attributes to pokeListItem
-        button.classList.add("button-class", "btn", "btn-primary");
+        button.classList.add('button-class', 'btn', 'btn-primary');
         button.classList.add('btn-block', 'btn-outline-primary', 'm-1');
         button.classList.add('bg-primary', 'text-capitalize');
         button.setAttribute('data-toggle', 'modal');
