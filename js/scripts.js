@@ -11,11 +11,10 @@ let pokemonRepository = (function () {
 
     //Function to add pokemon and validate the typeof
     function add(pokemon) {
-        if ( pokemon.name && pokemon.detailsUrl);
-         {
+        if ( pokemon.name && pokemon.detailsUrl) {
             pokemonList.push(pokemon);
         } else {
-            console.log("Invalid Pokemon entry")
+            console.log('Invalid Pokemon entry');
         }
     }
     //getAll function returns the pokemonList
@@ -108,7 +107,7 @@ let pokemonRepository = (function () {
         modalTitle.empty();
         modalbody.empty();
 
-        //Create and define button, h2, p, img elements
+        //Create and define button,h1 , p, img elements
 
         let pokemonName = $(`<h1>${pokmeon.name}</h1>`);
         let pokemonImage = $(`<img class="modal-img mx-auto" src="${pokemon.imageUrl}" alt="Sprite of Pokemon">`);
@@ -118,34 +117,13 @@ let pokemonRepository = (function () {
       
 
         //Append elements to Modal div
-        modal.appendChild(closeButtonElement);
-        modal.appendChild(titleElement);
-        modal.appendChild(heightElement);
-        modal.appendChild(typesElement);
-        modal.appendChild(imgElement);
-        modalContainer.appendChild(modal);
-
-        modalContainer.classList.add('is-visible')
+        modal.appendChild(pokemonName);
+        modal.appendChild(pokemonHeight);
+        modal.appendChild(pokemonTypes);
+        modal.appendChild(pokemonImage);
     }
 
-    //Function to hide Modal via CSS Class
-    function hideModal() {
-        modalContainer.classList.remove('is-visible');
-    }
-    //Event listner for ESC, will close modal by removing 'is-visible' class
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-            hideModal();
-        }
-    });
-
-    //Close modal by click
-    modalContainer.addEventListener('click', (e) => {
-        let target = e.target;
-        if (target === modalContainer) {
-            hideModal();
-        }
-    });
+    
     //Return Functions
     return {
         add: add,
