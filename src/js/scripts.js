@@ -1,7 +1,7 @@
 // Declaring variables inside IIFE, the add function and the getAll allow me to access it from outside the function
 const pokemonRepository = (function () {
   const pokemonList = [];
-  const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  const API_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   const input = $('input');
   input.on('input', filterList);
 
@@ -44,7 +44,7 @@ const pokemonRepository = (function () {
 
   // Function communicates with api throgh json and returns name and url
   function loadList() {
-    return fetch(apiUrl)
+    return fetch(API_URL)
       .then(function (response) {
         return response.json();
       })
