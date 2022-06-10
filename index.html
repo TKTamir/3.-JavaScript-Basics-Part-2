@@ -59,7 +59,11 @@
     <main>
       <h1>Pokédex</h1>
 
-      <ul class="pokemon-list list-group"></ul>
+      <ul class="pokemon-list list-group pagination"></ul>
+      <div id="pagination_container">
+        <button class="pagination_btn" id="prevbtn">Prev</button>
+        <button class="pagination_btn" id="nextbtn">Next</button>
+      </div>
 
       <!-- Modal -->
       <div
@@ -86,10 +90,6 @@
         </div>
       </div>
 
-      <div class="container"></div>
-      <ul class="row pokmeon-list mt-8 pl-5"></ul>
-      <div></div>
-
       <!-- <div id="modal-container"></div> -->
     </main>
     <script
@@ -111,6 +111,7 @@
       src = 'dist/js/promise-polyfill.js';
     </script>
     <script src="dist/js/fetch-polyfill.js"></script>
-    <script src="dist/js/scripts.js"></script>
+    <script src="dist/js/scripts.js"></script> 
+    <!-- Don't forget to move back to Dist!!!!! -->
   </body>
 </html>
