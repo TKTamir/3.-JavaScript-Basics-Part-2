@@ -1,9 +1,32 @@
 // Declaring variables inside IIFE, the add function and the getAll allow me to access it from outside the function
 const pokemonRepository = (function () {
   const pokemonList = [];
-  const API_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   const input = $('input');
   input.on('input', filterList);
+  let prevURL = nextURL = null;
+  const prevBtn = document.getElementById("prevbtn");
+  const nextBtn = document.getElementById("nextbtn");
+
+  //Event listeners listen to prevBtn and NextBtn, load the list and clear previous list
+  prevBtn.addEventListener("click", (e) => {
+    pokemonsByPage(prevURL);
+  });
+
+  nextBtn.addEventListener("click", (e) => {
+    pokemonsByPage(nextURL);
+  });
+
+  function pokemonsByPage(url) {
+    if (url) {
+      const pokemonListElement = document.querySelector('.pokemon-list');
+      pokemonListElement.innerHTML = '';
+      pokemonRepository.loadList(url).then(function () {
+        pokemonRepository.getAll().forEach(function (pokemon) {
+          pokemonRepository.addListItem(pokemon);
+        });
+      });
+    }
+  }
 
   //Function to add pokemon and validate the typeof
   function add(pokemon) {
@@ -28,14 +51,20 @@ const pokemonRepository = (function () {
       event.target.blur;
     });
 
+  
+    
+    
+
     //Add Classes and attributes to pokeListItem
+    
     button.classList.add('button-class', 'btn', 'btn-primary');
     button.classList.add('btn-block', 'btn-outline-primary', 'm-1');
     button.classList.add('bg-primary', 'text-capitalize');
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '.modal');
-    pokeListItem.classList.add('group-list-item');
-    pokeListItem.classList.add('col-sm-9');
+
+    pokemonList.classList.add('pagination')
+    pokeListItem.classList.add('group-list-item', 'col-sm-9', 'page-item');
 
     //Add pokeListItem
     pokeListItem.appendChild(button);
@@ -43,12 +72,17 @@ const pokemonRepository = (function () {
   }
 
   // Function communicates with api throgh json and returns name and url
-  function loadList() {
-    return fetch(API_URL)
+  function loadList(apiURL) {
+    return fetch(apiURL)
       .then(function (response) {
         return response.json();
       })
       .then(function (json) {
+        // Read pagination info from the API response
+        prevURL = json.previous;
+        nextURL = json.next;
+        pokemonList.length = 0; // Clear the previous data
+        toggleDisabledBtns();
         json.results.forEach(function (item) {
           const pokemon = {
             name: item.name,
@@ -75,6 +109,22 @@ const pokemonRepository = (function () {
         item.hide();
       }
     });
+  }
+
+  // Optimize this later- Function to disable buttons when prev/next=null
+  function toggleDisabledBtns() {
+    if (!prevURL) {
+      prevBtn.disabled = true;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+    if (!nextURL) {
+      nextBtn.disabled = true;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
   }
 
   //Promise function loads the img, height and types of the pokemon
@@ -155,7 +205,8 @@ const pokemonRepository = (function () {
 })();
 
 //Function loads the data from the api, forEach loop retrieves pokemon list one by one
-pokemonRepository.loadList().then(function () {
+const API_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=50';
+pokemonRepository.loadList(API_URL).then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
